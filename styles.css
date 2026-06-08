@@ -1,0 +1,14 @@
+#ResponseFromArray{
+    background-color: black;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+#TableFromArray{
+    background-color: blanchedalmond;
+    color: red;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+}

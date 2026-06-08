@@ -8,15 +8,27 @@
 </head>
 <body>
     <div class="container">
-        <form action="">
-            <input type="text" placeholder="Type the User Id">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-    <h1 id="user-id">User Id</h1>
-    <h2 id="ID">ID</h2>
-    <h3 id="Title">Title</h3>
-    <h4 id="Completed">Completed</h4>
+        <form onsubmit="fetchdata(event)">
+    <input type="number" id="number" placeholder="Type the User Id" min="1" max="200">
+    <button type="submit">Submit</button>
+</form>
     </div>
+    <!-- <div id="ResponseFromArray"></div>
+    <div id="TableFromArray"></div> -->
+    <table id="TableID">
+        <!-- <tr>
+            <th>User ID</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Is Completed</th>
+        </tr>
+        <tr id="TableRow">
+            <td id="Id1"></td>
+            <td id="Id2"></td> 
+            <td id="Id3"></td>
+            <td id="Id4"></td> 
+        </tr> -->
+    </table> 
 </body>
-<link rel="stylesheet" href="script.js">
+<script src="script.js"></script>
 </html>
