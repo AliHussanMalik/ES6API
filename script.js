@@ -27,6 +27,7 @@ async function fetchalldata() {
             
             // const Rowis = document.getElementById("TableRow")
             const TableRow2 = document.createElement("TR");
+            TableRow2.className = "TableRow2Class"
             const TableData1 = document.createElement("TD");
             TableData1.append(Element.userId);
             const TableData2 = document.createElement("TD");
@@ -35,8 +36,12 @@ async function fetchalldata() {
             TableData3.append(Element.title);
             const TableData4 = document.createElement("TD");
             TableData4.append(Element.completed)
+            const EditButton = document.createElement("button")
+            EditButton.innerHTML = "Edit"
+            const DeleteButton = document.createElement("button")
+            DeleteButton.innerHTML = "Delete"
             // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1 , TableData2 , TableData3, TableData4)
+            TableRow2.append(TableData1 , TableData2 , TableData3, TableData4, EditButton, DeleteButton)
             NewTable.append(TableRow2)
             // Rowis.append(TableRow)
             // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)
@@ -80,3 +85,5 @@ async function fetchdata(e) {
         console.error(err);
     }
 };
+
+console.log(Window)

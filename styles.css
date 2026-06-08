@@ -12,3 +12,9 @@
     padding: 20px;
     width: 100%;
 }
+
+.TableRow2Class{
+    background-color: aliceblue;
+    border: 1px black solid;
+    border-radius: 200px;
+}
