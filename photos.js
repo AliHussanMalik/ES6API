@@ -21,10 +21,10 @@ async function fetchallphotos() {
         TableHead5.innerText = "Thumbnail URL";
         const TableHead6 = document.createElement("TH");
         TableHead6.innerText = "Edit";
-        // const TableHead6 = document.createElement("TH");
-        // TableHead6.innerText = "Edit";
+        const TableHead7 = document.createElement("TH");
+        TableHead7.innerText = "Delete";
         const Tablethere = document.getElementById("TableID3")
-        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5)
+        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5,TableHead6,TableHead7,)
         NewTable.append(TableRow1)
         response.forEach((Element, index) => {
             // const ResponseByArray = document.getElementById("ResponseFromArray")
@@ -48,23 +48,16 @@ async function fetchallphotos() {
             const imageurl2 =document.createElement("img")
             imageurl2.src = Element.url
             TableData5.append(imageurl2)
+            const TableData6 = document.createElement("TD");
             const EditButton = document.createElement("button")
             EditButton.innerHTML = "Edit"
+            TableData6.append(EditButton)
+            const TableData7 = document.createElement("TD");
             const DeleteButton = document.createElement("button")
             DeleteButton.innerHTML = "Delete"
-            // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1, TableData2, TableData3, TableData4,TableData5, EditButton, DeleteButton)
+            TableData7.append(DeleteButton)
+            TableRow2.append(TableData1, TableData2, TableData3, TableData4,TableData5,TableData6, TableData7)
             NewTable.append(TableRow2)
-            // Rowis.append(TableRow)
-            // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)
-
-            // NewDiv.id = "NewDivID";
-            // NewDiv.className = "NewDivClass";
-
-            // NewDiv.innerHTML = `User ID {${Element.userId}}</t> ID {${Element.id}} </t>Title {${Element.title}} </t>Is Completed {${Element.completed}}<br><br>`;
-            // NewTable.innerHTML = `User ID {${Element.userId}}</t> ID {${Element.id}} </t>Title {${Element.title}} </t>Is Completed {${Element.completed}}<br><br>`;
-            // ResponseByArray.append(NewDiv)
-            // TableByArray.append(NewTable)
         }
         );
         Tablethere.append(NewTable)

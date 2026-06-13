@@ -22,10 +22,10 @@ async function fetchallalbums() {
         TableHead3.innerText = "Title";
         const TableHead4 = document.createElement("TH");
         TableHead4.innerText = "Edit";
-        // const TableHead6 = document.createElement("TH");
-        // TableHead6.innerText = "Edit";
+        const TableHead5 = document.createElement("TH");
+        TableHead5.innerText = "Delete";
         const Tablethere = document.getElementById("TableID2")
-        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4)
+        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4,TableHead5)
         NewTable.append(TableRow1)
         response.forEach((Element, index) => {
             // const ResponseByArray = document.getElementById("ResponseFromArray")
@@ -41,12 +41,16 @@ async function fetchallalbums() {
             TableData2.append(Element.id);
             const TableData3 = document.createElement("TD");
             TableData3.append(Element.title);
+            const TableData4 = document.createElement("TD");
             const EditButton = document.createElement("button")
             EditButton.innerHTML = "Edit"
+            TableData4.append(EditButton)
+            const TableData5 = document.createElement("TD");
             const DeleteButton = document.createElement("button")
             DeleteButton.innerHTML = "Delete"
+            TableData5.append(DeleteButton)
             // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1, TableData2, TableData3, EditButton, DeleteButton)
+            TableRow2.append(TableData1, TableData2, TableData3,TableData4,TableData5 )
             NewTable.append(TableRow2)
             // Rowis.append(TableRow)
             // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)

@@ -21,10 +21,10 @@ async function fetchallcomments() {
         TableHead5.innerText = "Body";
         const TableHead6 = document.createElement("TH");
         TableHead6.innerText = "Edit";
-        // const TableHead7 = document.createElement("TH");
-        // TableHead7.innerText = "Delete";
+        const TableHead7 = document.createElement("TH");
+        TableHead7.innerText = "Delete";
         const Tablethere = document.getElementById("TableID1")
-        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5, TableHead6)
+        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5, TableHead6,TableHead7)
         NewTable.append(TableRow1)
         response.forEach((Element, index) => {
             // const ResponseByArray = document.getElementById("ResponseFromArray")
@@ -44,12 +44,16 @@ async function fetchallcomments() {
             TableData4.append(Element.email)
             const TableData5 = document.createElement("TD");
             TableData5.append(Element.body)
+            const TableData6 = document.createElement("TD");
             const EditButton = document.createElement("button")
             EditButton.innerHTML = "Edit"
+            TableData6.append(EditButton)
+            const TableData7 = document.createElement("TD");
             const DeleteButton = document.createElement("button")
             DeleteButton.innerHTML = "Delete"
+            TableData7.append(DeleteButton)
             // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1, TableData2, TableData3, TableData4, TableData5, EditButton, DeleteButton)
+            TableRow2.append(TableData1, TableData2, TableData3, TableData4, TableData5,TableData6,TableData7)
             NewTable.append(TableRow2)
             // Rowis.append(TableRow)
             // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)

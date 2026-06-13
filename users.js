@@ -27,8 +27,10 @@ async function fetchallusers() {
         TableHead8.innerText = "Company";
         const TableHead9 = document.createElement("TH");
         TableHead9.innerText = "Edit";
+        const TableHead10 = document.createElement("TH");
+        TableHead10.innerText = "Delete";
         const Tablethere = document.getElementById("TableID5")
-        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5, TableHead6, TableHead7, TableHead8, TableHead9)
+        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5, TableHead6, TableHead7, TableHead8, TableHead9,TableHead10)
         NewTable.append(TableRow1)
         response.forEach((Element, index) => {
             // const ResponseByArray = document.getElementById("ResponseFromArray")
@@ -54,12 +56,15 @@ async function fetchallusers() {
             TableData7.append(Element.website)
             const TableData8 = document.createElement("TD");
             TableData8.append(Element.company.name,Element.company.catchPhrase,Element.company.bs)
+            const TableData9 = document.createElement("TD");
             const EditButton = document.createElement("button")
             EditButton.innerHTML = "Edit"
+            TableData9.append(EditButton)
+            const TableData10 = document.createElement("TD");
             const DeleteButton = document.createElement("button")
             DeleteButton.innerHTML = "Delete"
-            // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1, TableData2, TableData3, TableData4,TableData5,TableData6,TableData7,TableData8, EditButton, DeleteButton)
+            TableData10.append(DeleteButton)
+            TableRow2.append(TableData1, TableData2, TableData3, TableData4,TableData5,TableData6,TableData7,TableData8,TableData9,TableData10)
             NewTable.append(TableRow2)
             // Rowis.append(TableRow)
             // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)

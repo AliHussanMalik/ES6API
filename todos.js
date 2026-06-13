@@ -19,10 +19,10 @@ async function fetchtodos() {
         TableHead4.innerText = "Is Completed";
         const TableHead5 = document.createElement("TH");
         TableHead5.innerText = "Edit";
-        // const TableHead6 = document.createElement("TH");
-        // TableHead6.innerText = "Edit";
+        const TableHead6 = document.createElement("TH");
+        TableHead6.innerText = "Delete";
         const Tablethere = document.getElementById("TableID4")
-        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5)
+        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5,TableHead6)
         NewTable.append(TableRow1)
         response.forEach((Element, index) => {
             // const ResponseByArray = document.getElementById("ResponseFromArray")
@@ -39,13 +39,16 @@ async function fetchtodos() {
             const TableData3 = document.createElement("TD");
             TableData3.append(Element.title);
             const TableData4 = document.createElement("TD");
-            TableData4.append(Element.completed)
+            TableData4.append(Element.completed);
+            const TableData5 = document.createElement("TD");
             const EditButton = document.createElement("button")
-            EditButton.innerHTML = "Edit"
+            EditButton.innerText = "Edit"
+            TableData5.append(EditButton)
+            const TableData6 = document.createElement("TD");
             const DeleteButton = document.createElement("button")
             DeleteButton.innerHTML = "Delete"
-            // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1, TableData2, TableData3, TableData4, EditButton, DeleteButton)
+            TableData6.append(DeleteButton)
+            TableRow2.append(TableData1, TableData2, TableData3, TableData4,TableData5,TableData6)
             NewTable.append(TableRow2)
             // Rowis.append(TableRow)
             // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)
