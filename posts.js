@@ -1,6 +1,39 @@
 async function fetchallposts() {
     // e.preventDefault();
     try {
+
+        function EditButtonFunction() {
+            console.log("Edit Button Place")
+
+        }
+
+        async function DeleteButtonFunction() {
+            try {
+                const URL = `https://jsonplaceholder.typicode.com/posts/100`;
+
+                const output = await fetch(URL, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                // if (!response.ok) {
+                //     alert("Object is not Deleted")
+                // }
+                // else{
+                //     alert("Object is deleted")
+                // }
+                var response = await output.json();
+
+            }
+            catch (e) {
+                console.log(e)
+            }
+
+        }
+        //  document.getElementById("EditButton")
+        // EditButtonFunction.onclick(console.log("Is it working?"))
+
         const URL = `https://jsonplaceholder.typicode.com/posts/`;
 
         const output = await fetch(URL);
@@ -22,7 +55,7 @@ async function fetchallposts() {
         const TableHead6 = document.createElement("TH");
         TableHead6.innerText = "Delete";
         const Tablethere = document.getElementById("TableID")
-        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5,TableHead6)
+        TableRow1.append(TableHead1, TableHead2, TableHead3, TableHead4, TableHead5, TableHead6)
         NewTable.append(TableRow1)
         response.forEach((Element, index) => {
             // const ResponseByArray = document.getElementById("ResponseFromArray")
@@ -42,14 +75,18 @@ async function fetchallposts() {
             TableData4.append(Element.body)
             const TableData5 = document.createElement("TD");
             const EditButton = document.createElement("button")
+            EditButton.id = "EditButton"
             EditButton.innerHTML = "Edit"
+            EditButton.onclick = EditButtonFunction()
             TableData5.append(EditButton)
             const TableData6 = document.createElement("TD");
             const DeleteButton = document.createElement("button")
+            DeleteButton.id = "DeleteButton"
             DeleteButton.innerHTML = "Delete"
+            DeleteButton.onclick = DeleteButtonFunction()
             TableData6.append(DeleteButton)
             // TableRow2.append(Element.completed);
-            TableRow2.append(TableData1, TableData2, TableData3, TableData4,TableData5 ,TableData6)
+            TableRow2.append(TableData1, TableData2, TableData3, TableData4, TableData5, TableData6)
             NewTable.append(TableRow2)
             // Rowis.append(TableRow)
             // console.log(`Here is Headings${TableHead1}${TableHead2}${TableHead3}${TableHead4} \n ${TableData1}${TableData2}${TableData3}${TableData4}`)
@@ -72,3 +109,4 @@ async function fetchallposts() {
 };
 
 fetchallposts()
+
